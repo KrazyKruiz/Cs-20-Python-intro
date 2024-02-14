@@ -1,0 +1,36 @@
+#attibutes
+hair_color = "brown"
+eye_color = "blue-ish"
+name = "Kruiz" #string
+age = 15 # integer
+height = 5.5 # float
+hungry = False # boolean
+#conditioa statments
+print("Are you hungry?")
+print(hungry)
+if hungry==True:
+    print("here is hamburgers")
+    hungry = False
+else:
+    print("have some water")
+    hungry = True
+    
+print("Are you hungry?")
+print(hungry)
+
+if hungry==True:
+    print("here is hamburgers")
+else:
+    print("have some water")
+
+#variable = True statement if (condition) else False statement
+state = "hamburgers" if hungry else "water"
+print(state)
+
+#data types
+print("Hair Color: " + str(type(hair_color)))
+print("eye color" + str(type(eye_color)))
+print("name:" + str(type(name)))
+print(type(age))
+print(type(height))
+print(type(hungry))
