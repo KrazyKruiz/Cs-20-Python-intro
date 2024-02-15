@@ -1,0 +1,31 @@
+#boolean can be true/false
+#numbers equal true
+
+#integer equals whole numbers +/- or hex codes
+
+#floats have decimals
+
+#strings = words and must have quotes
+
+#complex = imaginary (not used much)
+
+#function = do stuff
+
+x = 4
+y = 10
+z = 3
+sum_o_numbers = x + y + z
+differnce_o_numbers = x-y-z
+#quick maths
+#print(x + y + z)
+#print(-x + y - z)
+
+#print(-2*x-3*y+z)
+#print((x^3)-(2*z)+(1+y))
+#print(sum_o_numbers+differnce_o_numbers)
+
+print(x//y)
+print(type(x//y))
+print(type(x/y))
+
+#// rounds down to nearest integer
