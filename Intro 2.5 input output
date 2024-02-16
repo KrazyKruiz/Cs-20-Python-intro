@@ -1,0 +1,12 @@
+#user profile variables (five inputs)
+your_age = input("How old are you?")
+your_name = input("What is you name?")
+your_fav_colour = input("What is your favourite colour?")
+your_eye_colour = input("What is your eye colour?")
+your_favourite_food = input("What is your favourite food?")
+#print out data for user
+print("You are " + your_age + " years old")
+print("Your name is " + your_name)
+print("Your Favourite colour is " + your_fav_colour)
+print("Your eyes are " + your_eye_colour)
+print(your_favourite_food + " is your favourite food.")
