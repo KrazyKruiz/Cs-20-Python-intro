@@ -1,14 +1,40 @@
-shape = str(input("Are you measuring a Cube, Cuboid, or Sphere?"))
-if shape == "Cube":
+shape = str(input("Are you measuring a Cube, Cuboid, Cylinder, Cone or Sphere?"))
+
+#it is a cube
+if shape == "Cube" or shape == "cube":
     Hcube = int(input("What is The heigth of the Cube?"))
     print(str(Hcube * Hcube * Hcube) + " is the volume of the Cube.")
-if shape == "Cuboid":
+    exit()
+    
+#it is a cuboid
+if shape == "Cuboid" or shape == "cuboid":
     Hcube = int(input("What is The heigth of the Cuboid?"))
     LCube = int(input("How long is the Cuboid?"))
     lCube = int(input("How wide is the Cuboid?"))
     print(str(Hcube * LCube * lCube) + " is the volume of the Cubeoid.")
-if shape == "Sphere":
+    exit()
+    
+#it is a Cylinder
+if shape == "Cylinder" or shape == "cylinder":
+    radius = int(input("What is The radius of the Cylinder?"))
+    HCylinder = int(input("What is The heigth of the Cylinder?"))
+    print(str(3.14 * radius * radius * HCylinder ) + " is the volume of the Cylinder.")
+    exit()
+    
+#it is a sphere
+if shape == "Sphere" or shape == "sphere":
     radius = int(input("What is The radius of the Sphere?"))
     print(str(radius * radius * radius * (4/3) * 3.14) + " is the volume of the Sphere.")
+    exit()
+    
+#it is a Cone
+if shape == "Cone" or shape == "cone":
+    radius = int(input("What is The radius of the Cone?"))
+    HCone = int(input("What is The heigth of the Cone?"))
+    print(str(3.14 * radius * radius * (HCone/3)) + " is the volume of the Cone.")
+    exit()
+    
+    
+#none of the shapes above
 else:
-    print("That's not a Cube, Cuboid, or Sphere")
+    print("That's not a Cube, Cuboid, Cylinder, Cone or Sphere!")
