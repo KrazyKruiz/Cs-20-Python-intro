@@ -1,41 +1,42 @@
-print("Volume Calculator V5")
-shape = int(input("input \"1\" for a Cube, input \"2\" for a Cuboid, input \"3\" for a Cylinder, input \"4\" for a Cone, or input \"5\" for a Sphere"))
+print("Volume Calculator V3.2")
+while True:
+    shape = int(input("input \"1\" for a Cube, input \"2\" for a Cuboid, input \"3\" for a Cylinder, input \"4\" for a Cone, or input \"5\" for a Sphere"))
 
-#it is a cube
-if shape == 1:
-    Hcube = int(input("What is The heigth of the Cube?"))
-    print(str(Hcube * Hcube * Hcube) + " is the volume of the Cube.")
-    exit()
+    #it is a cube
+    if shape == 1:
+        Hcube = int(input("What is The heigth of the Cube?"))
+        print(str(Hcube * Hcube * Hcube) + " is the volume of the Cube.")
+        exit()
+        
+    #it is a cuboid
+    if shape == 2:
+        Hcube = int(input("What is The heigth of the Cuboid?"))
+        LCube = int(input("How long is the Cuboid?"))
+        lCube = int(input("How wide is the Cuboid?"))
+        print(str(Hcube * LCube * lCube) + " is the volume of the Cubeoid.")
+        exit()
     
-#it is a cuboid
-if shape == 2:
-    Hcube = int(input("What is The heigth of the Cuboid?"))
-    LCube = int(input("How long is the Cuboid?"))
-    lCube = int(input("How wide is the Cuboid?"))
-    print(str(Hcube * LCube * lCube) + " is the volume of the Cubeoid.")
-    exit()
+    #it is a Cylinder
+    if shape == 3:
+        radius = int(input("What is The radius of the Cylinder?"))
+        HCylinder = int(input("What is The heigth of the Cylinder?"))
+        print(str(3.14 * radius * radius * HCylinder ) + " is the volume of the Cylinder.")
+        exit()
     
-#it is a Cylinder
-if shape == 3:
-    radius = int(input("What is The radius of the Cylinder?"))
-    HCylinder = int(input("What is The heigth of the Cylinder?"))
-    print(str(3.14 * radius * radius * HCylinder ) + " is the volume of the Cylinder.")
-    exit()
-    
-#it is a sphere
-if shape == 5:
-    radius = int(input("What is The radius of the Sphere?"))
-    print(str(radius * radius * radius * (4/3) * 3.14) + " is the volume of the Sphere.")
-    exit()
-    
-#it is a Cone
-if shape == 4:
-    radius = int(input("What is The radius of the Cone?"))
-    HCone = int(input("What is The heigth of the Cone?"))
-    print(str(3.14 * radius * radius * (HCone/3)) + " is the volume of the Cone.")
-    exit()
+    #it is a sphere
+    if shape == 5:
+        radius = int(input("What is The radius of the Sphere?"))
+        print(str(radius * radius * radius * (4/3) * 3.14) + " is the volume of the Sphere.")
+        exit()
+        
+    #it is a Cone
+    if shape == 4:
+        radius = int(input("What is The radius of the Cone?"))
+        HCone = int(input("What is The heigth of the Cone?"))
+        print(str(3.14 * radius * radius * (HCone/3)) + " is the volume of the Cone.")
+        exit()
     
     
-#none of the shapes above
-else:
-    print("That's not one of the specified numbers!")
+    #none of the shapes above
+    else:
+        print("That's not one of the specified numbers!")
