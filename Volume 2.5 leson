@@ -71,7 +71,7 @@ print("Volume Calculator V7.3")
 while True:
     shape = int(input("input \"1\" for a Cube, input \"2\" for a Cuboid, input \"3\" for a Cylinder, input \"4\" for a Cone, input \"5\" for a Sphere, or \"6\" to exit."))
 
-    #they want to exit prematurely
+    #they want to exit immediately because they suck
     if shape == 6:
         exit()
 
