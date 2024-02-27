@@ -2,6 +2,7 @@ def CalcCube():
     Hcube = int(input("What is The heigth of the Cube?"))
     print(str(Hcube * Hcube * Hcube) + " is the volume of the Cube.")
     while True:
+
         #want to calculate more shapes?
         Exit = str(input("Do you want to continue calculating? Y/N"))
         if Exit == "N" or Exit == "n":          
@@ -17,6 +18,7 @@ def CalcCuboid():
     lCube = int(input("How wide is the Cuboid?"))
     print(str(Hcube * LCube * lCube) + " is the volume of the Cubeoid.")
     while True:
+
         #want to calculate more shapes?
         Exit = str(input("Do you want to continue calculating? Y/N"))
         if Exit == "N" or Exit == "n":          
@@ -31,6 +33,7 @@ def CalcCylinder():
     HCylinder = int(input("What is The heigth of the Cylinder?"))
     print(str(3.14 * radius * radius * HCylinder ) + " is the volume of the Cylinder.")
     while True:
+
         #want to calculate more shapes?
         Exit = str(input("Do you want to continue calculating? Y/N"))
         if Exit == "N" or Exit == "n":          
@@ -44,6 +47,7 @@ def CalcSphere():
     radius = int(input("What is The radius of the Sphere?"))
     print(str(radius * radius * radius * (4/3) * 3.14) + " is the volume of the Sphere.")
     while True:
+
         #want to calculate more shapes?
         Exit = str(input("Do you want to continue calculating? Y/N"))
         if Exit == "N" or Exit == "n":          
@@ -58,6 +62,7 @@ def CalcCone():
     HCone = int(input("What is The heigth of the Cone?"))
     print(str(3.14 * radius * radius * (HCone/3)) + " is the volume of the Cone.")
     while True:
+
         #want to calculate more shapes?
         Exit = str(input("Do you want to continue calculating? Y/N"))
         if Exit == "N" or Exit == "n":          
@@ -69,6 +74,7 @@ def CalcCone():
 
 print("Volume Calculator V7.3")
 while True:
+
     shape = int(input("input \"1\" for a Cube, input \"2\" for a Cuboid, input \"3\" for a Cylinder, input \"4\" for a Cone, input \"5\" for a Sphere, or \"6\" to exit."))
 
     #they want to exit immediately because they suck
