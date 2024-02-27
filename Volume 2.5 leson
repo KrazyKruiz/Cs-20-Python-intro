@@ -1,40 +1,102 @@
-print("Volume Calculator V3.2")
+def CalcCube():
+    Hcube = int(input("What is The heigth of the Cube?"))
+    print(str(Hcube * Hcube * Hcube) + " is the volume of the Cube.")
+    while True:
+        #want to calculate more shapes?
+        Exit = str(input("Do you want to continue calculating? Y/N"))
+        if Exit == "N" or Exit == "n":          
+            exit()
+        elif Exit == "Y" or Exit == "y":
+            break
+        else:
+            print("That input is not \"Y\" or \"N\"!") 
+        
+def CalcCuboid():
+    Hcube = int(input("What is The heigth of the Cuboid?"))
+    LCube = int(input("How long is the Cuboid?"))
+    lCube = int(input("How wide is the Cuboid?"))
+    print(str(Hcube * LCube * lCube) + " is the volume of the Cubeoid.")
+    while True:
+        #want to calculate more shapes?
+        Exit = str(input("Do you want to continue calculating? Y/N"))
+        if Exit == "N" or Exit == "n":          
+            exit()
+        elif Exit == "Y" or Exit == "y":
+            break
+        else:
+            print("That input is not \"Y\" or \"N\"!") 
+        
+def CalcCylinder():
+    radius = int(input("What is The radius of the Cylinder?"))
+    HCylinder = int(input("What is The heigth of the Cylinder?"))
+    print(str(3.14 * radius * radius * HCylinder ) + " is the volume of the Cylinder.")
+    while True:
+        #want to calculate more shapes?
+        Exit = str(input("Do you want to continue calculating? Y/N"))
+        if Exit == "N" or Exit == "n":          
+            exit()
+        elif Exit == "Y" or Exit == "y":
+            break
+        else:
+            print("That input is not \"Y\" or \"N\"!") 
+        
+def CalcSphere():
+    radius = int(input("What is The radius of the Sphere?"))
+    print(str(radius * radius * radius * (4/3) * 3.14) + " is the volume of the Sphere.")
+    while True:
+        #want to calculate more shapes?
+        Exit = str(input("Do you want to continue calculating? Y/N"))
+        if Exit == "N" or Exit == "n":          
+            exit()
+        elif Exit == "Y" or Exit == "y":
+            break
+        else:
+            print("That input is not \"Y\" or \"N\"!") 
+
+def CalcCone():
+    radius = int(input("What is The radius of the Cone?"))
+    HCone = int(input("What is The heigth of the Cone?"))
+    print(str(3.14 * radius * radius * (HCone/3)) + " is the volume of the Cone.")
+    while True:
+        #want to calculate more shapes?
+        Exit = str(input("Do you want to continue calculating? Y/N"))
+        if Exit == "N" or Exit == "n":          
+            exit()
+        elif Exit == "Y" or Exit == "y":
+            break
+        else:
+            print("That input is not \"Y\" or \"N\"!") 
+
+print("Volume Calculator V7.3")
 while True:
-    shape = int(input("input \"1\" for a Cube, input \"2\" for a Cuboid, input \"3\" for a Cylinder, input \"4\" for a Cone, or input \"5\" for a Sphere"))
+    shape = int(input("input \"1\" for a Cube, input \"2\" for a Cuboid, input \"3\" for a Cylinder, input \"4\" for a Cone, input \"5\" for a Sphere, or \"6\" to exit."))
+
+    #they want to exit prematurely
+    if shape == 6:
+        exit()
 
     #it is a cube
     if shape == 1:
-        Hcube = int(input("What is The heigth of the Cube?"))
-        print(str(Hcube * Hcube * Hcube) + " is the volume of the Cube.")
-        exit()
+        CalcCube()
+        
         
     #it is a cuboid
     if shape == 2:
-        Hcube = int(input("What is The heigth of the Cuboid?"))
-        LCube = int(input("How long is the Cuboid?"))
-        lCube = int(input("How wide is the Cuboid?"))
-        print(str(Hcube * LCube * lCube) + " is the volume of the Cubeoid.")
-        exit()
+        CalcCuboid()
     
     #it is a Cylinder
     if shape == 3:
-        radius = int(input("What is The radius of the Cylinder?"))
-        HCylinder = int(input("What is The heigth of the Cylinder?"))
-        print(str(3.14 * radius * radius * HCylinder ) + " is the volume of the Cylinder.")
-        exit()
+        CalcCylinder()
+        
     
     #it is a sphere
     if shape == 5:
-        radius = int(input("What is The radius of the Sphere?"))
-        print(str(radius * radius * radius * (4/3) * 3.14) + " is the volume of the Sphere.")
-        exit()
+        CalcSphere()
+        
         
     #it is a Cone
     if shape == 4:
-        radius = int(input("What is The radius of the Cone?"))
-        HCone = int(input("What is The heigth of the Cone?"))
-        print(str(3.14 * radius * radius * (HCone/3)) + " is the volume of the Cone.")
-        exit()
+        CalcCone()
     
     
     #none of the shapes above
