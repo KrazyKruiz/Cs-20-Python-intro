@@ -4,10 +4,10 @@ def CalcCube():
     while True:
         
         #want to calculate more shapes?
-        Exit = str(input("Do you want to continue calculating? Y/N"))
-        if Exit == "N" or Exit == "n":          
+        Exit = str(input("Do you want to continue calculating? Y/N").upper())
+        if Exit == "N":          
             exit()
-        elif Exit == "Y" or Exit == "y":
+        elif Exit == "Y":
             break
         else:
             print("That input is not \"Y\" or \"N\"!") 
@@ -20,10 +20,10 @@ def CalcCuboid():
     while True:
         
         #want to calculate more shapes?
-        Exit = str(input("Do you want to continue calculating? Y/N"))
-        if Exit == "N" or Exit == "n":          
+        Exit = str(input("Do you want to continue calculating? Y/N").upper())
+        if Exit == "N":          
             exit()
-        elif Exit == "Y" or Exit == "y":
+        elif Exit == "Y":
             break
         else:
             print("That input is not \"Y\" or \"N\"!") 
@@ -35,10 +35,10 @@ def CalcCylinder():
     while True:
         
         #want to calculate more shapes?
-        Exit = str(input("Do you want to continue calculating? Y/N"))
-        if Exit == "N" or Exit == "n":          
+        Exit = str(input("Do you want to continue calculating? Y/N").upper())
+        if Exit == "N":          
             exit()
-        elif Exit == "Y" or Exit == "y":
+        elif Exit == "Y":
             break
         else:
             print("That input is not \"Y\" or \"N\"!") 
@@ -49,10 +49,10 @@ def CalcSphere():
     while True:
         
         #want to calculate more shapes?
-        Exit = str(input("Do you want to continue calculating? Y/N"))
-        if Exit == "N" or Exit == "n":          
+        Exit = str(input("Do you want to continue calculating? Y/N")).upper()
+        if Exit == "N":          
             exit()
-        elif Exit == "Y" or Exit == "y":
+        elif Exit == "Y":
             break
         else:
             print("That input is not \"Y\" or \"N\"!") 
@@ -64,10 +64,10 @@ def CalcCone():
     while True:
         
         #want to calculate more shapes?
-        Exit = str(input("Do you want to continue calculating? Y/N"))
-        if Exit == "N" or Exit == "n":          
+        Exit = str(input("Do you want to continue calculating? Y/N").upper())
+        if Exit == "N":          
             exit()
-        elif Exit == "Y" or Exit == "y":
+        elif Exit == "Y":
             break
         else:
             print("That input is not \"Y\" or \"N\"!") 
@@ -78,7 +78,7 @@ while True:
     shape = int(input("Input \"1\" for a Cube, input \"2\" for a Cuboid, input \"3\" for a Cylinder, input \"4\" for a Cone, input \"5\" for a Sphere, or \"6\" to exit."))
    
    #none of the shapes above
-    if shape != 1 or shape != 2 or shape != 3 or shape != 4 or shape != 5 or shape != 6:
+    if shape < 1 or shape > 6:
         print("That's not one of the specified numbers!")
         
     #they want to exit immediately because they suck
