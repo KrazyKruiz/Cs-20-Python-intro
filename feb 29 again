@@ -1,0 +1,29 @@
+###############################
+#basic toggle and for looops
+#kruiz w
+#feb 29 2024
+#this line can be used for summarization
+###############################
+
+
+#toggle is a placeholder
+
+#basic format for a toggle switch and for loop
+power = True
+
+#functions returns toggle state to console/shell
+def power_state():
+    if power:
+        print("it is on")
+    else:
+        print("it is off")
+        
+#loop returns toggle state 60 times before exiting
+for x in range(3600):
+    print("idle time: ", x)
+    power_state()
+#boolean toggle switch of current state
+power = not power
+#final value of toggle state
+power_state()
+    
