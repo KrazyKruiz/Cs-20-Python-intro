@@ -1,0 +1,29 @@
+###############################
+#basic toggle and for looops
+#kruiz w
+#feb 29 2024
+#this line can be used for summarization
+###############################
+
+
+#toggle is a placeholder
+
+#basic format for a toggle switch and for loop
+toggle = True
+
+#functions returns toggle state to console/shell
+def toggle_state():
+    if toggle:
+        print("toggle is true")
+    else:
+        print("toggle is false")
+        
+#loop returns toggle state 60 times before exiting
+for x in range(60):
+    print("current loop: ", x)
+    toggle_state()
+#boolean toggle switch of current state
+toggle = not toggle
+#final value of toggle state
+toggle_state()
+    
