@@ -1,0 +1,18 @@
+fruitsNveggies = ["banana","grape","raspberry","strawberry","avacodo"]
+food1 = "banana"
+food2 = "grape"
+food3 = "raspberry"
+food4 = "strawberry"
+food5 = "avacodo"
+
+print(fruitsNveggies)
+
+print(fruitsNveggies[0]) # banana
+print(fruitsNveggies[1]) #grape
+print(fruitsNveggies[4]) #avacodo
+print(fruitsNveggies[-0]) #banana
+print(fruitsNveggies[-2]) #strawberry
+
+#prints all five
+for x in fruitsNveggies:
+    print(x)
