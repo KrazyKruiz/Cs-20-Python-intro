@@ -1,0 +1,20 @@
+######################
+#temperature conversions, averaging, and min/max calculator
+#C. Slater - Assignment
+#March 1, 2024
+#
+#take 7 temp readings from the user (in Kelvin, Celcius or Farnheit) and report back the average for the week and the min and max values for the week in all temperature scales (C, F, and K,
+######################
+Temp = int(input("What are you measuring the temperature with? Type \"1\" for Celcius, \"2\" for Farenheit, or \"3\" for Kelvin"))
+temp1 = int(input("What was the temperature on sunday?"))
+temp2 = int(input("What was the temperature on monday?"))
+temp3 = int(input("What was the temperature on tuesday?"))
+temp4 = int(input("What was the temperature on wednesday?"))
+temp5 = int(input("What was the temperature on thursday?"))
+temp6 = int(input("What was the temperature on friday?"))
+temp7 = int(input("What was the temperature on saturday?"))
+
+DailyTemp = [temp1, temp2, temp3, temp4, temp5, temp6, temp7]
+
+if Temp = 1:
+    Celcius = temp1 + temp2 + temp3 + temp4 + temp5 + temp6 + temp7
