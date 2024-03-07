@@ -7,8 +7,11 @@
 ######################
 
 #average temperature of the week
-def ATemp():
-    return (float(temp1 + temp2 + temp3 + temp4 + temp5 + temp6 + temp7)/7)
+def ATemp(tempOWeek):
+    #for to sum values of list
+    #length to find denominator
+    
+    return (float(tempOWeek)/7)
 
 #converts fahrenheit to kelvin
 def ConFahrenKelvin(a):
@@ -26,37 +29,43 @@ def ConFahrenCelcius(a):
 def ConKelvinCelcius(a):
     return float(a - 273.15)
 
+#start of program
 print("Welcome to the weekly minimum, maximum, and average temperature calculator!")
-#asks for each days temperature
+
+#what kind of measurement
 Temp = int(input("What are you measuring the temperature with? Type \"1\" for Celcius, \"2\" for Fahrenheit, or \"3\" for Kelvin."))
-temp1 = float(input("What was the temperature on sunday?"))
-temp2 = float(input("What was the temperature on monday?"))
-temp3 = float(input("What was the temperature on tuesday?"))
-temp4 = float(input("What was the temperature on wednesday?"))
-temp5 = float(input("What was the temperature on thursday?"))
-temp6 = float(input("What was the temperature on friday?"))
-temp7 = float(input("What was the temperature on saturday?"))
+
+#list of days in a week
+DayOWeek = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
+
+#list of temps in the week
+tempOWeek = [0,0,0,0,0,0,0]
+
+#asks for each days temperature
+for x in range(7):
+    tempOWeek[x] = float(input(f"What was the temperature on {DayOWeek[x]}?"))
+    
+
 
 
 #Sorts the min and max values of the week
-DailyTemp = [temp1, temp2, temp3, temp4, temp5, temp6, temp7]
-DailyTemp.sort()
+tempOWeek.sort()
 
 #if they chose celcius
 if Temp == 1:
     
     #Gathers average temp of inputs in celcius, then converts to farenheit and kelvin
-    ACelcius = ATemp()
+    ACelcius = ATemp(tempOWeek)
     AFahrenheit = ConCelciusFahren(ACelcius)
     AKelvin = ConFahrenKelvin(AFahrenheit)
      
     #Gathers minimum temp of inputs in celcius, then converts to farenheit and kelvin
-    MinC = DailyTemp[0] 
+    MinC = tempOWeek[0] 
     MinF = ConCelciusFahren(MinC)
     MinK = ConFahrenKelvin(MinF)
 
     ##Gathers maximum temp of inputs in celcius, then converts to farenheit and kelvin
-    MaxC = DailyTemp[6] 
+    MaxC = tempOWeek[6] 
     MaxF = ConCelciusFahren(MaxC)
     MaxK = ConFahrenKelvin(MaxF)
     
@@ -64,17 +73,17 @@ if Temp == 1:
 if Temp == 2:
     
     #Gathers average temp of inputs in farhenheit, then converts to celcius and kelvin
-    AFahrenheit = ATemp()
+    AFahrenheit = ATemp(tempOWeek)
     ACelcius = ConFahrenCelcius(AFahrenheit)
     AKelvin = ConFahrenKelvin(AFahrenheit)
     
     #Gathers minimum temp of inputs in farhenheit, then converts to celcius and kelvin
-    MinF = DailyTemp[0] 
+    MinF = tempOWeek[0] 
     MinC = ConFahrenCelcius(MinF)
     MinK = ConFahrenKelvin(MinF)
 
     ##Gathers maximum temp of inputs in celcius, then converts to fahrenheit and kelvin
-    MaxF = DailyTemp[6] 
+    MaxF = tempOWeek[6] 
     MaxC = ConFahrenCelcius(MaxF)
     MaxK = ConFahrenKelvin(MaxF)
     
@@ -82,21 +91,22 @@ if Temp == 2:
 if Temp == 3:
     
     #Gathers average temp of inputs in farhenheit, then converts to celcius and kelvin
-    AKelvin = ATemp()
+    AKelvin = ATemp(tempOWeek)
     ACelcius = ConKelvinCelcius(AKelvin)
     AFahrenheit = ConCelciusFahren(ACelcius)
        
     #Gathers minimum temp of inputs in farhenheit, then converts to celcius and kelvin
-    MinK = DailyTemp[0] 
+    MinK = tempOWeek[0] 
     MinC = ConKelvinCelcius(AKelvin)
     MinF = ConCelciusFahren(MinC)
 
     ##Gathers maximum temp of inputs in celcius, then converts to fahrenheit and kelvin
-    MaxK = DailyTemp[6] 
+    MaxK = tempOWeek[6] 
     MaxC = ConKelvinCelcius(MaxK)
     MaxF = ConCelciusFahren(MaxC)
     
 #now tells the user the min/max/average of the week
-print("The average temperature for the week was ", ACelcius , " degrees in Celcius, ", AFahrenheit , " degrees in Fahrenheit, and ", AKelvin , " degrees in Kelvin.")
-print("The minimum temperature for the week was ", MinC , " degrees in Celcius, ", MinF , " degrees in Fahrenheit, and ", MinK , " degrees in Kelvin.")
-print("The maximum temperature for the week was ", MaxC , " degrees in Celcius, ", MaxF , " degrees in Fahrenheit, and ", MaxK , " degrees in Kelvin.")
+print("The average temperature for the week was ", round(ACelcius) , " degrees in Celcius, ", round(AFahrenheit) , " degrees in Fahrenheit, and ", round(AKelvin) , " degrees in Kelvin.")
+print("The minimum temperature for the week was ", round(MinC) , " degrees in Celcius, ", round(MinF) , " degrees in Fahrenheit, and ", round(MinK) , " degrees in Kelvin.")
+print("The maximum temperature for the week was ", round(MaxC) , " degrees in Celcius, ", round(MaxF) , " degrees in Fahrenheit, and ", round(MaxK) , " degrees in Kelvin.")
+#end of program
