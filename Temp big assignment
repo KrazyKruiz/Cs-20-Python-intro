@@ -5,24 +5,30 @@
 #
 #take 7 temp readings from the user (in Kelvin, Celcius or Farnheit) and report back the average for the week and the min and max values for the week in all temperature scales (C, F, and K,
 ######################
+
+#average temperature of the week
 def ATemp():
     return (float(temp1 + temp2 + temp3 + temp4 + temp5 + temp6 + temp7)/7)
-     
+
+#converts fahrenheit to kelvin
 def ConFahrenKelvin(a):
     return float((a) - (32)) * (5/9) + 273.15
 
+#converts celcius to fahrenheit
 def ConCelciusFahren(a):
     return float(a * (9/5) + 32)
 
+#converts fahrenheit to celcius
 def ConFahrenCelcius(a):
     return float((5/9) * (a - 32))
 
+#converts kelvin to celcius
 def ConKelvinCelcius(a):
     return float(a - 273.15)
 
-
+print("Welcome to the weekly minimum, maximum, and average temperature calculator!")
 #asks for each days temperature
-Temp = int(input("What are you measuring the temperature with? Type \"1\" for Celcius, \"2\" for Fahrenheit, or \"3\" for Kelvin"))
+Temp = int(input("What are you measuring the temperature with? Type \"1\" for Celcius, \"2\" for Fahrenheit, or \"3\" for Kelvin."))
 temp1 = float(input("What was the temperature on sunday?"))
 temp2 = float(input("What was the temperature on monday?"))
 temp3 = float(input("What was the temperature on tuesday?"))
@@ -31,27 +37,22 @@ temp5 = float(input("What was the temperature on thursday?"))
 temp6 = float(input("What was the temperature on friday?"))
 temp7 = float(input("What was the temperature on saturday?"))
 
-#
 
-
-
-
-#Sorts the min nad max values of the week
+#Sorts the min and max values of the week
 DailyTemp = [temp1, temp2, temp3, temp4, temp5, temp6, temp7]
 DailyTemp.sort()
 
+#if they chose celcius
 if Temp == 1:
     
     #Gathers average temp of inputs in celcius, then converts to farenheit and kelvin
     ACelcius = ATemp()
     AFahrenheit = ConCelciusFahren(ACelcius)
     AKelvin = ConFahrenKelvin(AFahrenheit)
-    
-
-        
+     
     #Gathers minimum temp of inputs in celcius, then converts to farenheit and kelvin
     MinC = DailyTemp[0] 
-    MinF = ConCelciusFahren(int(MinC))
+    MinF = ConCelciusFahren(MinC)
     MinK = ConFahrenKelvin(MinF)
 
     ##Gathers maximum temp of inputs in celcius, then converts to farenheit and kelvin
@@ -59,9 +60,7 @@ if Temp == 1:
     MaxF = ConCelciusFahren(MaxC)
     MaxK = ConFahrenKelvin(MaxF)
     
-    
-    
-    
+#if they chose fahrenheit
 if Temp == 2:
     
     #Gathers average temp of inputs in farhenheit, then converts to celcius and kelvin
@@ -69,8 +68,6 @@ if Temp == 2:
     ACelcius = ConFahrenCelcius(AFahrenheit)
     AKelvin = ConFahrenKelvin(AFahrenheit)
     
-
-        
     #Gathers minimum temp of inputs in farhenheit, then converts to celcius and kelvin
     MinF = DailyTemp[0] 
     MinC = ConFahrenCelcius(MinF)
@@ -81,17 +78,14 @@ if Temp == 2:
     MaxC = ConFahrenCelcius(MaxF)
     MaxK = ConFahrenKelvin(MaxF)
     
-    
-    
+#if they chose kelvin
 if Temp == 3:
     
     #Gathers average temp of inputs in farhenheit, then converts to celcius and kelvin
     AKelvin = ATemp()
     ACelcius = ConKelvinCelcius(AKelvin)
     AFahrenheit = ConCelciusFahren(ACelcius)
-    
-
-        
+       
     #Gathers minimum temp of inputs in farhenheit, then converts to celcius and kelvin
     MinK = DailyTemp[0] 
     MinC = ConKelvinCelcius(AKelvin)
@@ -102,6 +96,7 @@ if Temp == 3:
     MaxC = ConKelvinCelcius(MaxK)
     MaxF = ConCelciusFahren(MaxC)
     
+#now tells the user the min/max/average of the week
 print("The average temperature for the week was ", ACelcius , " degrees in Celcius, ", AFahrenheit , " degrees in Fahrenheit, and ", AKelvin , " degrees in Kelvin.")
 print("The minimum temperature for the week was ", MinC , " degrees in Celcius, ", MinF , " degrees in Fahrenheit, and ", MinK , " degrees in Kelvin.")
 print("The maximum temperature for the week was ", MaxC , " degrees in Celcius, ", MaxF , " degrees in Fahrenheit, and ", MaxK , " degrees in Kelvin.")
