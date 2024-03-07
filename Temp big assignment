@@ -7,43 +7,19 @@
 ######################
 def ATemp():
     return (float(temp1 + temp2 + temp3 + temp4 + temp5 + temp6 + temp7)/7)
-    
-def AConFahrenKelvin(AFahrenheit):
-    return float((AFahrenheit) - (32)) * (5/9) + 273.15
+     
+def ConFahrenKelvin(a):
+    return float((a) - (32)) * (5/9) + 273.15
 
-    
-def MinConFahrenKelvin(MinF):
-    return float((MinF) - (32)) * (5/9) + 273.15
-    
-def MaxConFahrenKelvin(MaxF):
-    return float((MaxF) - (32)) * (5/9) + 273.15
-    
-    
-def AConCelciusFahren(ACelcius):
-    return float(ACelcius * (9/5) + 32)
+def ConCelciusFahren(a):
+    return float(a * (9/5) + 32)
 
-    
-def MinConCelciusFahren(MinC):
-    return float(MinC * (9/5) + 32)
+def ConFahrenCelcius(a):
+    return float((5/9) * (a - 32))
 
-    
-def MaxConCelciusFahren(MaxC):
-    return float(MaxC * (9/5) + 32)
+def ConKelvinCelcius(a):
+    return float(a - 273.15)
 
-def AConFahrenCelcius(AFahrenheit):
-    return float((5/9) * (AFahrenheit - 32))
-
-def MinConFahrenCelcius(MinF):
-    return float((5/9) * (MinF - 32))
-
-def MaxConFahrenCelcius(MaxF):
-    return float((5/9) * (MaxF - 32))
-
-def AConKelvinCelcius(AKelvin):
-    return float(AKelvin - 273.15)
-
-def MaxConKelvinCelcius(MaxK):
-    return float(MaxK - 273.15)
 
 #asks for each days temperature
 Temp = int(input("What are you measuring the temperature with? Type \"1\" for Celcius, \"2\" for Fahrenheit, or \"3\" for Kelvin"))
@@ -68,20 +44,20 @@ if Temp == 1:
     
     #Gathers average temp of inputs in celcius, then converts to farenheit and kelvin
     ACelcius = ATemp()
-    AFahrenheit = AConCelciusFahren(ACelcius)
-    AKelvin = AConFahrenKelvin(AFahrenheit)
+    AFahrenheit = ConCelciusFahren(ACelcius)
+    AKelvin = ConFahrenKelvin(AFahrenheit)
     
 
         
     #Gathers minimum temp of inputs in celcius, then converts to farenheit and kelvin
     MinC = DailyTemp[0] 
-    MinF = MinConCelciusFahren(int(MinC))
-    MinK = MinConFahrenKelvin(MinF)
+    MinF = ConCelciusFahren(int(MinC))
+    MinK = ConFahrenKelvin(MinF)
 
     ##Gathers maximum temp of inputs in celcius, then converts to farenheit and kelvin
     MaxC = DailyTemp[6] 
-    MaxF = MaxConCelciusFahren(MaxC)
-    MaxK = MaxConFahrenKelvin(MaxF)
+    MaxF = ConCelciusFahren(MaxC)
+    MaxK = ConFahrenKelvin(MaxF)
     
     
     
@@ -90,20 +66,20 @@ if Temp == 2:
     
     #Gathers average temp of inputs in farhenheit, then converts to celcius and kelvin
     AFahrenheit = ATemp()
-    ACelcius = AConFahrenCelcius(AFahrenheit)
-    AKelvin = AConFahrenKelvin(AFahrenheit)
+    ACelcius = ConFahrenCelcius(AFahrenheit)
+    AKelvin = ConFahrenKelvin(AFahrenheit)
     
 
         
     #Gathers minimum temp of inputs in farhenheit, then converts to celcius and kelvin
     MinF = DailyTemp[0] 
-    MinC = MinConFahrenCelcius(MinF)
-    MinK = MinConFahrenKelvin(MinF)
+    MinC = ConFahrenCelcius(MinF)
+    MinK = ConFahrenKelvin(MinF)
 
     ##Gathers maximum temp of inputs in celcius, then converts to fahrenheit and kelvin
     MaxF = DailyTemp[6] 
-    MaxC = MaxConFahrenCelcius(MaxF)
-    MaxK = MaxConFahrenKelvin(MaxF)
+    MaxC = ConFahrenCelcius(MaxF)
+    MaxK = ConFahrenKelvin(MaxF)
     
     
     
@@ -111,20 +87,20 @@ if Temp == 3:
     
     #Gathers average temp of inputs in farhenheit, then converts to celcius and kelvin
     AKelvin = ATemp()
-    ACelcius = AConKelvinCelcius(AKelvin)
-    AFahrenheit = AConCelciusFahren(ACelcius)
+    ACelcius = ConKelvinCelcius(AKelvin)
+    AFahrenheit = ConCelciusFahren(ACelcius)
     
 
         
     #Gathers minimum temp of inputs in farhenheit, then converts to celcius and kelvin
     MinK = DailyTemp[0] 
-    MinC = AConKelvinCelcius(AKelvin)
-    MinF = MinConCelciusFahren(MinC)
+    MinC = ConKelvinCelcius(AKelvin)
+    MinF = ConCelciusFahren(MinC)
 
     ##Gathers maximum temp of inputs in celcius, then converts to fahrenheit and kelvin
     MaxK = DailyTemp[6] 
-    MaxC = MaxConKelvinCelcius(MaxK)
-    MaxF = MaxConCelciusFahren(MaxC)
+    MaxC = ConKelvinCelcius(MaxK)
+    MaxF = ConCelciusFahren(MaxC)
     
 print("The average temperature for the week was ", ACelcius , " degrees in Celcius, ", AFahrenheit , " degrees in Fahrenheit, and ", AKelvin , " degrees in Kelvin.")
 print("The minimum temperature for the week was ", MinC , " degrees in Celcius, ", MinF , " degrees in Fahrenheit, and ", MinK , " degrees in Kelvin.")
