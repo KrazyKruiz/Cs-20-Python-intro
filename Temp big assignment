@@ -8,10 +8,10 @@
 
 #average temperature of the week
 def ATemp(tempOWeek):
-    #for to sum values of list
-    #length to find denominator
-    
-    return (float(tempOWeek)/7)
+    b = 0
+    for x in range(len(tempOWeek)):
+        b = b + tempOWeek[x]
+    return (float(b)/len(tempOWeek))
 
 #converts fahrenheit to kelvin
 def ConFahrenKelvin(a):
@@ -42,12 +42,13 @@ DayOWeek = ['sunday','monday','tuesday','wednesday','thursday','friday','saturda
 tempOWeek = [0,0,0,0,0,0,0]
 
 #asks for each days temperature
-for x in range(7):
+for x in range(len(tempOWeek)):
     tempOWeek[x] = float(input(f"What was the temperature on {DayOWeek[x]}?"))
     
-
-
-
+#Restates the temp of each day of the week before saying the min/max/average
+for x in range(len(tempOWeek)):
+    print(f"The temperature on {DayOWeek[x]} was {tempOWeek[x]} degrees.")
+    
 #Sorts the min and max values of the week
 tempOWeek.sort()
 
@@ -109,4 +110,4 @@ if Temp == 3:
 print("The average temperature for the week was ", round(ACelcius) , " degrees in Celcius, ", round(AFahrenheit) , " degrees in Fahrenheit, and ", round(AKelvin) , " degrees in Kelvin.")
 print("The minimum temperature for the week was ", round(MinC) , " degrees in Celcius, ", round(MinF) , " degrees in Fahrenheit, and ", round(MinK) , " degrees in Kelvin.")
 print("The maximum temperature for the week was ", round(MaxC) , " degrees in Celcius, ", round(MaxF) , " degrees in Fahrenheit, and ", round(MaxK) , " degrees in Kelvin.")
-#end of program
+#end of program :)
