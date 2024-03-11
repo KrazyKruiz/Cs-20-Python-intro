@@ -1,0 +1,8 @@
+import easygui as easy
+
+msg_first = "Please enter your first name:"
+first_name = easy.enterbox(msg_first)
+msg_last = "Please enter your last name:"
+last_name = easy.enterbox(msg_last)
+greeting = (f"Hello {first_name} {last_name}!")
+easy.msgbox(greeting, "User")
