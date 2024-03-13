@@ -4,27 +4,16 @@ import easygui as easy, random
 while True:
     msg = "Input the indicated Answers to generate a fun story!"
     title = "Story Generator"
-    Words = ["Noun #1","Noun #2","Noun #3","Noun #4","Verb #1","Verb #2","Verb #3","Verb #4","Verb ending with -ing #1","Verb ending with -ing #2","Verb ending with -ing #3","Verb ending with -ing #4","adjective #1","adjective #2","adjective #3","adjective #4", "adverb #1", "adverb #2", "adverb #3", "adverb #4","past tense verb #1","past tense verb #2","past tense verb #3","past tense verb #4","Plural noun #1","Plural noun #2","Plural noun #3","Plural noun #4"]
-    Answers = []
-    Answers = easy.multenterbox(msg,title,Words)
+    WordsN = ["Noun #1","Noun #2","Noun #3","Noun #4"]
+    AnswersN = []
+    AnswersN = easy.multenterbox(msg,title,WordsN)
 
-    rng = random.randint(1,3)
 
-    if rng == 1:
-        noun1 = Answers[0]
-        noun2 = Answers[1]
-        noun3 = Answers[2]
-        noun4 = Answers[3]
-    elif rng == 2:
-        noun1 = Answers[3]
-        noun2 = Answers[2]
-        noun3 = Answers[1]
-        noun4 = Answers[0]
-    elif rng == 3:
-        noun1 = Answers[2]
-        noun2 = Answers[3]
-        noun3 = Answers[0]
-        noun4 = Answers[1]
+    def rngnoun():
+        random_noun = random.randint(0, len(AnswersN)-1)
+        return (AnswersN[random_noun])
+        AnswersN.remove(AnswersN[random_noun])
+
         
     rng = random.randint(1,3)
 
