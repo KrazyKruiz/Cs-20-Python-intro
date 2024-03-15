@@ -1,160 +1,43 @@
 #im not writing out all the beggining details becuase all my code crashed when i was finsihed :)
 
 import easygui as easy, random
-while True:
-    msg = "Input the indicated Answers to generate a fun story!"
-    title = "Story Generator"
-    Words = ["Noun #1","Noun #2","Noun #3","Noun #4","Verb #1","Verb #2","Verb #3","Verb #4","Verb ending with -ing #1","Verb ending with -ing #2","Verb ending with -ing #3","Verb ending with -ing #4","adjective #1","adjective #2","adjective #3","adjective #4", "adverb #1", "adverb #2", "adverb #3", "adverb #4","past tense verb #1","past tense verb #2","past tense verb #3","past tense verb #4","Plural noun #1","Plural noun #2","Plural noun #3","Plural noun #4"]
+msg = "Input the indicated words to generate a fun story!"
+title = "Story Generator"
+    
+def random_word(Answers):
+    rand_word = random.randint(0,len(Answers)-1)
+    return rand_word
+
+def ask_questions(Wtype):
+    Words = ["{Wtype} #1","{Wtype} #2","{Wtype} #3","{Wtype} #4"]
     Answers = []
     Answers = easy.multenterbox(msg,title,Words)
+    random_word(Answers)
+    
+Adjective = "Adjective"
+Noun = "Noun"
+Verb = "Verb"
+PluralNoun = "PluralNoun"
+PastTenseVerb = "PastTenseVerb"
+VerbEndingWithIng = "VerbEndingWithIng"
+Adverb = "Adverb"
 
+while True:    
     rng = random.randint(1,3)
 
     if rng == 1:
-        noun1 = Answers[0]
-        noun2 = Answers[1]
-        noun3 = Answers[2]
-        noun4 = Answers[3]
-    elif rng == 2:
-        noun1 = Answers[3]
-        noun2 = Answers[2]
-        noun3 = Answers[1]
-        noun4 = Answers[0]
-    elif rng == 3:
-        noun1 = Answers[2]
-        noun2 = Answers[3]
-        noun3 = Answers[0]
-        noun4 = Answers[1]
-        
-    rng = random.randint(1,3)
-
-    if rng == 1:
-        verb1 = Answers[4]
-        verb2 = Answers[5]
-        verb3 = Answers[6]
-        verb4 = Answers[7]
-    elif rng == 2:
-        verb1 = Answers[7]
-        verb2 = Answers[6]
-        verb3 = Answers[5]
-        verb4 = Answers[4]
-    elif rng == 3:
-        verb1 = Answers[6]
-        verb2 = Answers[7]
-        verb3 = Answers[4]
-        verb4 = Answers[5]
-        
-        
-    rng = random.randint(1,3)
-
-    if rng == 1:
-        verbing1 = Answers[8]
-        verbing2 = Answers[9]
-        verbing3 = Answers[10]
-        verbing4 = Answers[11]
-    elif rng == 2:
-        verbing1 = Answers[11]
-        verbing2 = Answers[10]
-        verbing3 = Answers[9]
-        verbing4 = Answers[8]
-    elif rng == 3:
-        verbing1 = Answers[10]
-        verbing2 = Answers[11]
-        verbing3 = Answers[8]
-        verbing4 = Answers[9]
-                    
-
-    rng = random.randint(1,3)
-
-    if rng == 1:
-        adj1 = Answers[12]
-        adj2 = Answers[13]
-        adj3 = Answers[14]
-        adj4 = Answers[15]
-    elif rng == 2:
-        adj1 = Answers[15]
-        adj2 = Answers[14]
-        adj3 = Answers[13]
-        adj4 = Answers[12]
-    elif rng == 3:
-        adj1 = Answers[14]
-        adj2 = Answers[15]
-        adj3 = Answers[12]
-        adj4 = Answers[13]
-        
-        
-    rng = random.randint(1,3)
-
-    if rng == 1:
-        adv1 = Answers[16]
-        adv2 = Answers[17]
-        adv3 = Answers[18]
-        adv4 = Answers[19]
-    elif rng == 2:
-        adv1 = Answers[19]
-        adv2 = Answers[18]
-        adv3 = Answers[17]
-        adv4 = Answers[16]
-    elif rng == 3:
-        adv1 = Answers[18]
-        adv2 = Answers[19]
-        adv3 = Answers[16]
-        adv4 = Answers[17]
-            
-            
-    rng = random.randint(1,3)
-
-    if rng == 1:
-        pasttverb1 = Answers[20]
-        pasttverb2 = Answers[21]
-        pasttverb3 = Answers[22]
-        pasttverb4 = Answers[23]
-    elif rng == 2:
-        pasttverb1 = Answers[23]
-        pasttverb2 = Answers[22]
-        pasttverb3 = Answers[21]
-        pasttverb4 = Answers[20]
-    elif rng == 3:
-        pasttverb1 = Answers[22]
-        pasttverb2 = Answers[23]
-        pasttverb3 = Answers[20]
-        pasttverb4 = Answers[21]
-        
-        
-        
-    rng = random.randint(1,3)
-
-    if rng == 1:
-        plurnoun1 = Answers[24]
-        plurnoun2 = Answers[25]
-        plurnoun3 = Answers[26]
-        plurnoun4 = Answers[27]
-    elif rng == 2:
-        plurnoun1 = Answers[27]
-        plurnoun2 = Answers[26]
-        plurnoun3 = Answers[25]
-        plurnoun4 = Answers[24]
-    elif rng == 3:
-        plurnoun1 = Answers[26]
-        plurnoun2 = Answers[27]
-        plurnoun3 = Answers[24]
-        plurnoun4 = Answers[25]
-        
-        
-    rng = random.randint(1,3)
-
-    if rng == 1:
-        easy.msgbox(f"Today I went to the zoo. I saw a {adj1} {noun1} jumping up and down in its tree. He {pasttverb1} {adv1} through the large tunnel that led to its {adj2} {noun2}. I got some peanuts and passed them through the cage to a gigantic gray {noun3} towering above my head. Feeding that animal made me hungry. I went to get a {adj2} scoop of ice cream. It filled my stomach. Afterwards I had to {verb1} {adv2} to catch our bus. When I got home I {pasttverb2} my mom for a {adj3} day at the zoo.")
+        easy.msgbox(f"Today I went to the zoo. I saw a {ask_questions(Adjective)} {ask_questions(Noun)} jumping up and down in its tree. He {ask_questions(PastTenseVerb)} {ask_questions(Adverb)} through the large tunnel that led to its {ask_questions(Adjective)} {ask_questions(Noun)}. I got some peanuts and passed them through the cage to a gigantic gray {ask_questions(Noun)} towering above my head. Feeding that animal made me hungry. I went to get a {ask_questions(Adjective)} scoop of ice cream. It filled my stomach. Afterwards I had to {ask_questions(Verb)} {ask_questions(Adverb)} to catch our bus. When I got home I {ask_questions(PastTenseVerb)} my mom for a {ask_questions(Adjective)} day at the zoo.")
 
     if rng == 2:
-        easy.msgbox(f"The day I saw the Monkey King {verb1} was one of the most interesting days of the year. After he did that, the king played chess on his brother's {noun1} and then combed his {adj1} hair with a comb made out of old fish bones. Later that same day, I saw the Monkey King dance {adv1} in front of an audience of kangaroos and wombats.")
+        easy.msgbox(f"The day I saw the Monkey King {ask_questions(Verb)} was one of the most interesting days of the year. After he did that, the king played chess on his brother's {ask_questions(Noun)} and then combed his {ask_questions(Adjective)} hair with a comb made out of old fish bones. Later that same day, I saw the Monkey King dance {ask_questions(Adverb)} in front of an audience of kangaroos and wombats.")
 
     if rng == 3:
-        easy.msgbox(f"When I go to the arcade with my {plurnoun1} there are lots of games to play. I spend lots of time there with my friends. In the game X-Men you can be different {plurnoun2}. The point of the game is to {verb1} every robot. You also need to save people. Then you can go to the next level. In the game Star Wars you are Luke Skywalker and you try to destroy every {noun1}. In a car racing/motorcycle racing game you need to beat every computerized vehicle that you are {verbing1} against. There are a whole lot of other cool games. When you play some games you win {plurnoun3} for certain scores. Once you're done you can cash in your tickets to get a big {noun2}. You can save your {plurnoun4} for another time. When I went to this arcade I didn't believe how much fun it would be. So far I have had a lot of fun every time I've been to this great arcade!")
+        easy.msgbox(f"When I go to the arcade with my {ask_questions(PluralNoun)} there are lots of games to play. I spend lots of time there with my friends. In the game X-Men you can be different {ask_questions(PluralNoun)}. The point of the game is to {ask_questions(Verb)} every robot. You also need to save people. Then you can go to the next level. In the game Star Wars you are Luke Skywalker and you try to destroy every {ask_questions(Noun)}. In a car racing/motorcycle racing game you need to beat every computerized vehicle that you are {ask_questions(VerbEndingWithIng)} against. There are a whole lot of other cool games. When you play some games you win {ask_questions(PluralNoun)} for certain scores. Once you're done you can cash in your tickets to get a big {ask_questions(Noun)}. You can save your {ask_questions(PluralNoun)} for another time. When I went to this arcade I didn't believe how much fun it would be. So far I have had a lot of fun every time I've been to this great arcade!")
         
-    msg ="Do you want to do more?"
-    title = "Continue?"
+    msg1 ="Do you want to do more?"
+    title1 = "Continue?"
     choices = ["Yes","No"]
-    choice = easy.choicebox(msg, title, choices)
+    choice = easy.choicebox(msg1, title1, choices)
     if choice == "No":
         exit()
+
