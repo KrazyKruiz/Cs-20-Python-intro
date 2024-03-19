@@ -2,10 +2,30 @@ import easygui as easy, random
 msg = "Input the indicated words to generate a fun story!(Or don't)"
 title = "Story Generator"
 
+#if the user is lazy
+def empty(Wtype):
+    match Wtype:
+        case "Noun":
+            return "boat"
+        case "Verb":
+            return "jump"
+        case "PluralNoun":
+            return "shoes"
+        case "Adjective":
+            return "red"
+        case "Adverb":
+            return "softly"
+        case "VerbEndingWithIng":
+            return "falling"
+        case "PastTenseVerb":
+            return "ran"
 #takes one random answer
 def random_word(Answers):
     rand_word = random.randint(0,len(Answers)-1)
-    return rand_word
+    if Answers[rand_word] == "":
+        Answers[rand_word] = empty(Wtype)
+    else:    
+        return Answers[rand_word]
 
 #asks for user input
 def ask_questions(Wtype):
@@ -14,23 +34,8 @@ def ask_questions(Wtype):
         word = (Wtype+" #"+str(x+1))
         Words.append(word)
     Answers = easy.multenterbox(msg,title,Words)
-    #if the user is lazy
-    if Answers == ["", "", ""]:
-        match Wtype:
-            case "Noun":
-                return "boat"
-            case "Verb":
-                return "jump"
-            case "PluralNoun":
-                return "shoes"
-            case "Adjective":
-                return "red"
-            case "Adverb":
-                return "softly"
-            case "VerbEndingWithIng":
-                return "falling"
-            case "PastTenseVerb":
-                return "ran"
+    if Answers == ["","",""]:
+        empty()
     else:
         return random_word(Answers)
     
