@@ -1,0 +1,32 @@
+#################################################
+#employee dictionary
+#Kruiz Wasylenchuk
+#Date
+#Task: Complete functions with the provided info
+#run entirely from shell
+#################################################
+import easygui as easy
+
+quests = "What is their name?", "What is their job?", "What was their start year?", "Where do they work?"
+msg = "Input employee data."
+all_employees = {"Employee #1" : {"name":"slater","job":"teacher","location":"CCHS", "start_date": 2018}}
+print(len(all_employees))
+
+def add_person():
+    title = (f"Employee #{len(all_employees)+1}")
+    Answers = easy.multenterbox(msg,title,quests)
+    employee
+    all_employees.update({title : {"Name":Answers[0],"Job":Answers[1]},"Start year":Answers[2],"Work Location":Answers[3]})
+      
+    #^^^^^^create local dictionary ^^^^^
+
+    
+#def print_employees():
+    #print all names from global dictioanry
+    
+#def print_job_location_pairs():
+    #print out jobs and their locations
+    
+#def print_possible_raise():
+    #if employee started prior to 2020
+    #eligible for a raise, print data for individual
