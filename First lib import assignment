@@ -3,41 +3,27 @@ msg = "Input the indicated words to generate a fun story!(Or don't)"
 title = "Story Generator"
 
 #if the user is lazy
-def empty(Wtype):
-    match Wtype:
-        case "Noun":
-            return "boat"
-        case "Verb":
-            return "jump"
-        case "PluralNoun":
-            return "shoes"
-        case "Adjective":
-            return "red"
-        case "Adverb":
-            return "softly"
-        case "VerbEndingWithIng":
-            return "falling"
-        case "PastTenseVerb":
-            return "ran"
+def empty(GivenWord):
+    Wdict = {"Noun":"boat","Verb":"jump","PluralNoun":"shoes","Adjective":"red","Adverb":"softly","VerbEndingWithIng":"falling","PastTenseVerb":"ran"}
+    Wdict(GivenWord)     
+            
 #takes one random answer
 def random_word(Answers):
     rand_word = random.randint(0,len(Answers)-1)
     if Answers[rand_word] == "":
-        Answers[rand_word] = empty(Wtype)
+        Answers[rand_word] = empty(GivenWord)
     else:    
         return Answers[rand_word]
 
 #asks for user input
 def ask_questions(Wtype):
+    GivenWord = Wtype
     Words = []
     for x in range(3):
         word = (Wtype+" #"+str(x+1))
         Words.append(word)
     Answers = easy.multenterbox(msg,title,Words)
-    if Answers == ["","",""]:
-        empty()
-    else:
-        return random_word(Answers)
+    return random_word(Answers)
     
 
 #picks a story to present
