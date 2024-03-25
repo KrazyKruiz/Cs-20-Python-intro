@@ -11,26 +11,30 @@ quests = "What is their name?", "What is their job?", "What was their start year
 msg = "Input employee data."
 all_employees = [{"name":"Slater","job":"teacher","start_date": 2018,"location":"CCHS"}]
 
+#adds a person to all employees
 def add_person():
     title = (f"Employee #{len(all_employees) + 1}")
     Answers = easy.multenterbox(msg,title,quests)
+    #user didnt put a numerical value as start year
+    while Answers[2].isdigit() == False:
+        Answers[2] = easy.enterbox("Please input a numerical value for the start year.", title)
     all_employees.append({"name":Answers[0],"job":Answers[1],"start_date":Answers[2],"location":Answers[3]})
-
-def print_employees():
-    for x in all_employees:
-        easy.msgbox(x["name"])
     
+#prints name of all employees
+def print_employees():
+    employees = ""
+    for x in all_employees:
+        employees.append(x["name"]+"\n")
+    easy.msgbox(employees)
+        
+#prints all names with where they work
 def print_job_location_pairs():
     for x in all_employees:
-        easy.msgbox(x["name"],"works at",x["location"])
-    
+        easy.msgbox(f'{x["name"]} works as a(n) {x["job"]} at {x["location"]}')
+        
+#says if eligible for a raise
 def print_possible_raise():
     for x in all_employees:
         date = int(x["start_date"])
         if date <= 2020:
-            easy.msgbox(f"{x['name']},{x['job']},{x['start_date']},{x['location']} This valuable employee is eligible for a raise.")
-        
-        
-
-    #if employee started prior to 2020
-    #eligible for a raise, print data for individual
+            easy.msgbox(f"{x['name']} works as a(n) {x['job']}, they started in {x['start_date']}, they work at {x['location']}. This valuable employee is eligible for a raise.")
