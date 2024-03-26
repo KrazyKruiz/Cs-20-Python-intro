@@ -46,7 +46,7 @@ def print_job_location_pairs():
 def print_possible_raise():
     raised = ""
     for x in range(len(all_employees)):
-        date = int(x["start_date"])
+        date = int([x]["start_date"])
         if date <= 2020:
-            raised += date
-            easy.msgbox(f"{x['name']} works as a(n) {x['job']}, they started in {x['start_date']}, they work at {x['location']}. This valuable employee is eligible for a raise.")
+            raised += f"{x['name']} works as a(n) {x['job']}, they started in {x['start_date']}, they work at {x['location']}. This valuable employee is eligible for a raise. \n"
+            easy.msgbox(raised)
