@@ -22,19 +22,31 @@ def add_person():
     
 #prints name of all employees
 def print_employees():
+    #name line break name
     employees = ""
-    for x in all_employees:
-        employees.append(x["name"]+"\n")
+    for x in range(len(all_employees)):
+        holder = all_employees[x]["name"]
+        employees += holder
+        employees += "\n"
     easy.msgbox(employees)
         
 #prints all names with where they work
 def print_job_location_pairs():
-    for x in all_employees:
-        easy.msgbox(f'{x["name"]} works as a(n) {x["job"]} at {x["location"]}')
+    pairs = "A(n) "
+    for x in range(len(all_employees)):
+        pair = all_employees[x]["job"]
+        paired = all_employees[x]["location"]
+        pairs += pair
+        pairs += " works at "
+        pairs += paired
+        pairs += "\n"
+    easy.msgbox(pairs)
         
 #says if eligible for a raise
 def print_possible_raise():
-    for x in all_employees:
+    raised = ""
+    for x in range(len(all_employees)):
         date = int(x["start_date"])
         if date <= 2020:
+            raised += date
             easy.msgbox(f"{x['name']} works as a(n) {x['job']}, they started in {x['start_date']}, they work at {x['location']}. This valuable employee is eligible for a raise.")
