@@ -1,0 +1,40 @@
+import turtle as t, random as r
+
+#name/color/speed of turtle
+bob = t.Turtle()
+bob.hideturtle()
+bob.color("grey")
+bob.speed(1000000)
+
+#creates inputed amount of rings
+def createTarget(rings):
+    while rings > 0:
+        bob.dot((55 + ((rings)*20)),"black")
+        if rings%2 == 0:
+            for x in ["black", "white"]:
+                bob.dot((50 + ((rings)*20)),x)
+                rings -= 1
+                if rings <= 1:
+                    break
+        else:
+            for x in ["white", "black"]:
+                bob.dot((50 + ((rings)*20)),x)
+                rings -= 1
+                if rings <= 1:
+                    break
+    bob.dot(50,"red")
+    
+#shoots arrows to random areas
+def shoot(number, rings):
+    bob.penup()
+    while number > 0:
+        bull = r.randint(1,rings)
+        if bull == 1:
+            bob.stamp()
+        area = r.randint(1,360)
+        bob.left(area)
+        ring = r.randint(1,rings)
+        bob.forward(25 + ring*10)
+        bob.stamp()
+        bob.goto(0,0)
+        number -= 1
