@@ -1,0 +1,32 @@
+import turtle as t
+Bob = t.Turtle()
+Bob.color("black")
+Ben = t.Turtle()
+Ben.color("purple")
+Sally = t.Turtle()
+Sally.color("yellow")
+Burt = t.Turtle()
+Burt.color("blue")
+Bertha = t.Turtle()
+Bertha.color("grey")
+Line = t.Turtle()
+Line.color("red")
+def setup():
+    t.clearscreen
+    for racers in [Bob,Ben,Sally,Burt,Bertha,Line]:
+        t.penup()
+    Bob.goto(0,40)
+    Ben.goto(0,20)
+    Sally.goto(0,0)
+    Burt.goto(0,-20)
+    Bertha.goto(0,-40)
+    Line.goto(200,-50)
+    Line.left(90)
+    for racers in [Bob,Ben,Sally,Burt,Bertha,Line]:
+        t.pendown()
+    Line.forward(100)
+    Line.hideturtle()
+    
+#screen = t.Screen().setup(200,200)
+
+
