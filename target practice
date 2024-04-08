@@ -1,13 +1,13 @@
-import turtle as t, random as r
+import turtle as t, random as r, easygui as easy
 
 #name/color/speed of turtle
 bob = t.Turtle()
 bob.hideturtle()
 bob.color("grey")
-bob.speed(1000000)
 
 #creates inputed amount of rings
 def createTarget(rings):
+    bob.clear
     while rings > 0:
         bob.dot((55 + ((rings)*20)),"black")
         if rings%2 == 0:
@@ -27,14 +27,19 @@ def createTarget(rings):
 #shoots arrows to random areas
 def shoot(number, rings):
     bob.penup()
+    score = 0
     while number > 0:
-        bull = r.randint(1,rings)
+        bull = r.randint(1,rings+1)
         if bull == 1:
             bob.stamp()
-        area = r.randint(1,360)
-        bob.left(area)
-        ring = r.randint(1,rings)
-        bob.forward(25 + ring*10)
-        bob.stamp()
-        bob.goto(0,0)
+            score += ((30 + rings*20))
+        else:
+            area = r.randint(1,360)
+            bob.left(area)
+            bob.forward(25 + (bull-1)*10)
+            bob.stamp()
+            bob.goto(0,0)
+            score += ((30 + rings*20)-((bull-1)*20))
         number -= 1
+    easy.msgbox(f"You got {score} points",title="Score")
+
