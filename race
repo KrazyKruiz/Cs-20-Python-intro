@@ -1,4 +1,5 @@
-import turtle as t
+import turtle as t, random as r
+t.speed(2)
 Bob = t.Turtle()
 Bob.color("black")
 Ben = t.Turtle()
@@ -14,19 +15,26 @@ Line.color("red")
 def setup():
     t.clearscreen
     for racers in [Bob,Ben,Sally,Burt,Bertha,Line]:
-        t.penup()
+        racers.penup()
     Bob.goto(0,40)
     Ben.goto(0,20)
     Sally.goto(0,0)
     Burt.goto(0,-20)
     Bertha.goto(0,-40)
-    Line.goto(200,-50)
+    Line.goto(200,-60)
     Line.left(90)
     for racers in [Bob,Ben,Sally,Burt,Bertha,Line]:
-        t.pendown()
-    Line.forward(100)
+        racers.pendown()
+    Line.forward(120)
     Line.hideturtle()
     
+    
+def race():
+    while 
+        for racers in [Bob,Ben,Sally,Burt,Bertha,Line]:
+            speed = r.randint(10,30)
+            racers.forward(speed)
+            if racers.xcor() >= 100:
+                break()
+        
 #screen = t.Screen().setup(200,200)
-
-
