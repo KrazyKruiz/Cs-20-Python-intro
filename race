@@ -1,40 +1,66 @@
-import turtle as t, random as r
+import turtle as t, random as r, easygui as easy
 t.speed(2)
-Bob = t.Turtle()
-Bob.color("black")
-Ben = t.Turtle()
-Ben.color("purple")
-Sally = t.Turtle()
-Sally.color("yellow")
-Burt = t.Turtle()
-Burt.color("blue")
-Bertha = t.Turtle()
-Bertha.color("grey")
-Line = t.Turtle()
-Line.color("red")
-def setup():
-    t.clearscreen
-    for racers in [Bob,Ben,Sally,Burt,Bertha,Line]:
+
+def setup(people):
+    for racers in people:
         racers.penup()
-    Bob.goto(0,40)
-    Ben.goto(0,20)
-    Sally.goto(0,0)
-    Burt.goto(0,-20)
-    Bertha.goto(0,-40)
-    Line.goto(200,-60)
-    Line.left(90)
-    for racers in [Bob,Ben,Sally,Burt,Bertha,Line]:
+    people[0].goto(0,40)
+    people[1].goto(0,20)
+    people[2].goto(0,0)
+    people[3].goto(0,-20)
+    people[4].goto(0,-40)
+    people[5].goto(200,-60)
+    people[5].left(90)
+    for racers in people:
         racers.pendown()
-    Line.forward(120)
-    Line.hideturtle()
+    people[5].forward(120)
+    people[5].hideturtle()
     
     
-def race():
-    while 
-        for racers in [Bob,Ben,Sally,Burt,Bertha,Line]:
-            speed = r.randint(10,30)
+def race(people):
+    Winner = False
+    while Winner == False:
+        for racers in people:
+            speed = r.randint(5,30)
             racers.forward(speed)
-            if racers.xcor() >= 100:
-                break()
+            if racers.xcor() >= 200:
+                racers.penup()
+                racers.forward(10)
+                racers.pendown()
+                racers.forward(10)
+                racers.back(5)
+                racers.left(90)
+                racers.forward(10)
+                racers.left(120)
+                racers.forward(5)
+                racers.hideturtle()
+                Winner = True
+                break
         
-#screen = t.Screen().setup(200,200)
+def full_race():
+    exist = []
+    while True:
+        t.Screen().reset()
+        if len(exist) == 1:
+            exist = []
+            for racers in [Bob,Ben,Sally,Burt,Bertha]:
+                screen.remove(racers)
+        Bob = t.Turtle()
+        Bob.color("black")
+        Ben = t.Turtle()
+        Ben.color("purple")
+        Sally = t.Turtle()
+        Sally.color("yellow")
+        Burt = t.Turtle()
+        Burt.color("blue")
+        Bertha = t.Turtle()
+        Bertha.color("grey")
+        Line = t.Turtle()
+        Line.color("red")
+        people = [Bob,Ben,Sally,Burt,Bertha,Line]
+        speedsters = [Bob,Ben,Sally,Burt,Bertha]
+        setup(people)
+        race(speedsters)
+        Answer = easy.choicebox("Do you want to watch a rematch?", "Rerace?",("Yes","No"))
+        if Answer == "No":
+            break
