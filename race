@@ -1,9 +1,12 @@
 import turtle as t, random as r, easygui as easy
 t.speed(2)
 wins = [0,0,0,0,0]
+
+#setsup race
 def setup(people):
     for racers in people:
         racers.penup()
+        #racers in start position
     people[0].goto(0,40)
     people[1].goto(0,20)
     people[2].goto(0,0)
@@ -11,17 +14,37 @@ def setup(people):
     people[4].goto(0,-40)
     people[5].goto(200,-60)
     people[5].left(90)
+    
+    #makes dividers between racers
+    number = 30
+    for x in range(4):
+        people[6].goto(0, number)
+        while people[6].xcor() < 200:
+            people[6].pendown()
+            people[6].forward(10)
+            people[6].penup()
+            people[6].forward(10)
+            
+        number -= 20
+    people[6].hideturtle()
+    
+    # makes finish line
     for racers in people:
         racers.pendown()
     people[5].forward(120)
+    people[5].penup()
+    people[5].forward(10)
+    people[5].write("Finish")
     people[5].hideturtle()
     
+#keeps track of individual wins
 def win_counter(racers, winner):
     wins[racers.index(winner)] += 1
     winner.penup()
     winner.forward(20)
     winner.write(f"{wins[racers.index(winner)]}")
     
+#makes the race happen
 def race(speedsters):
     Winner = False
     while Winner == False:
@@ -34,26 +57,30 @@ def race(speedsters):
                 Winner = True
                 return racer
         
+#setsup race, races then restarts if agreed to
 def full_race():
     exist = []
+    Bob = t.Turtle()
+    Ben = t.Turtle()
+    Sally = t.Turtle()
+    Burt = t.Turtle()
+    Bertha = t.Turtle()
+    Line = t.Turtle()
+    Divider = t.Turtle()
+
     while True:
         t.Screen().reset()
-        Bob = t.Turtle()
-        Bob.color("black")
-        Ben = t.Turtle()
-        Ben.color("purple")
-        Sally = t.Turtle()
-        Sally.color("yellow")
-        Burt = t.Turtle()
-        Burt.color("blue")
-        Bertha = t.Turtle()
-        Bertha.color("grey")
-        Line = t.Turtle()
-        Line.color("red")
-        people = [Bob,Ben,Sally,Burt,Bertha,Line]
         speedsters = [Bob,Ben,Sally,Burt,Bertha]
+        people = [Bob,Ben,Sally,Burt,Bertha,Line,Divider]
+        colour = ["black","purple","yellow","blue","green","red","grey"]
+        y = 0
+        for x in people:
+            x.color(colour[y])
+            y += 1
+                
         setup(people)
         race(speedsters)
+        
         Answer = easy.choicebox("Do you want to watch a rematch?", "Rerace?",("Yes","No"))
         if Answer == "No":
             break
