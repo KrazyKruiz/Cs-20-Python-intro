@@ -1,6 +1,6 @@
 import turtle as t, random as r, easygui as easy
 t.speed(2)
-
+wins = [0,0,0,0,0]
 def setup(people):
     for racers in people:
         racers.penup()
@@ -16,35 +16,28 @@ def setup(people):
     people[5].forward(120)
     people[5].hideturtle()
     
+def win_counter(racers, winner):
+    wins[racers.index(winner)] += 1
+    winner.penup()
+    winner.forward(20)
+    winner.write(f"{wins[racers.index(winner)]}")
     
-def race(people):
+def race(speedsters):
     Winner = False
     while Winner == False:
-        for racers in people:
+        for racer in speedsters:
             speed = r.randint(5,30)
-            racers.forward(speed)
-            if racers.xcor() >= 200:
-                racers.penup()
-                racers.forward(10)
-                racers.pendown()
-                racers.forward(10)
-                racers.back(5)
-                racers.left(90)
-                racers.forward(10)
-                racers.left(120)
-                racers.forward(5)
-                racers.hideturtle()
+            racer.forward(speed)
+            if racer.xcor() >= 200:
+                win_counter(speedsters,racer)
+                racer.hideturtle()
                 Winner = True
-                break
+                return racer
         
 def full_race():
     exist = []
     while True:
         t.Screen().reset()
-        if len(exist) == 1:
-            exist = []
-            for racers in [Bob,Ben,Sally,Burt,Bertha]:
-                screen.remove(racers)
         Bob = t.Turtle()
         Bob.color("black")
         Ben = t.Turtle()
