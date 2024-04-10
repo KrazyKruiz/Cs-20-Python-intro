@@ -1,6 +1,8 @@
 import turtle as t, random as r, easygui as easy
 t.speed(2)
 wins = [0,0,0,0,0]
+win = t.Screen()
+
 
 #setsup race
 def setup(people):
@@ -60,7 +62,11 @@ def race(speedsters):
 #setsup race, races then restarts if agreed to
 def full_race():
     exist = []
+    win.register_shape(f"C:/Users/knw287/Downloads/download (1).gif")
+    
     Bob = t.Turtle()
+    Bob.shape(f"C:/Users/knw287/Downloads/download (1).gif")
+    Bob.shapesize(1,1,1)
     Ben = t.Turtle()
     Sally = t.Turtle()
     Burt = t.Turtle()
