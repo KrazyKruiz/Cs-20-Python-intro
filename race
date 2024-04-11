@@ -1,5 +1,6 @@
 import turtle as t, random as r, easygui as easy
 t.speed(2)
+t.hideturtle()
 wins = [0,0,0,0,0]
 win = t.Screen()
 
@@ -57,20 +58,31 @@ def race(speedsters):
                 win_counter(speedsters,racer)
                 racer.hideturtle()
                 Winner = True
-                return racer
+                break
         
 #setsup race, races then restarts if agreed to
 def full_race():
     exist = []
     win.register_shape(f"C:/Users/knw287/Downloads/download (1).gif")
-    
+    win.register_shape(f"C:/Users/knw287/Downloads/koop (1).gif")
+    win.register_shape(f"C:/Users/knw287/Downloads/turt (1).gif")
+    win.register_shape(f"C:/Users/knw287/Downloads/ninjaturt (1).gif")
+    win.register_shape(f"C:/Users/knw287/Downloads/chillturtle (1).gif")
     Bob = t.Turtle()
     Bob.shape(f"C:/Users/knw287/Downloads/download (1).gif")
     Bob.shapesize(1,1,1)
     Ben = t.Turtle()
+    Ben.shape(f"C:/Users/knw287/Downloads/koop (1).gif")
+    Ben.shapesize(1,1,1)
     Sally = t.Turtle()
+    Sally.shape(f"C:/Users/knw287/Downloads/turt (1).gif")
+    Sally.shapesize(1,1,1)
     Burt = t.Turtle()
+    Burt.shape(f"C:/Users/knw287/Downloads/ninjaturt (1).gif")
+    Burt.shapesize(1,1,1)
     Bertha = t.Turtle()
+    Bertha.shape(f"C:/Users/knw287/Downloads/chillturtle (1).gif")
+    Bertha.shapesize(1,1,1)
     Line = t.Turtle()
     Divider = t.Turtle()
 
