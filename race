@@ -67,28 +67,28 @@ def full_race():
     win.register_shape(f"C:/Users/knw287/Downloads/turt (1).gif")
     win.register_shape(f"C:/Users/knw287/Downloads/ninjaturt (1).gif")
     win.register_shape(f"C:/Users/knw287/Downloads/chillturtle (1).gif")
-    Bob = t.Turtle()
-    Bob.shape(f"C:/Users/knw287/Downloads/download (1).gif")
-    Bob.shapesize(1,1,1)
-    Ben = t.Turtle()
-    Ben.shape(f"C:/Users/knw287/Downloads/koop (1).gif")
-    Ben.shapesize(1,1,1)
-    Sally = t.Turtle()
-    Sally.shape(f"C:/Users/knw287/Downloads/turt (1).gif")
-    Sally.shapesize(1,1,1)
-    Burt = t.Turtle()
-    Burt.shape(f"C:/Users/knw287/Downloads/ninjaturt (1).gif")
-    Burt.shapesize(1,1,1)
-    Bertha = t.Turtle()
-    Bertha.shape(f"C:/Users/knw287/Downloads/chillturtle (1).gif")
-    Bertha.shapesize(1,1,1)
+    Turtle = t.Turtle()
+    Turtle.shape(f"C:/Users/knw287/Downloads/download (1).gif")
+    Turtle.shapesize(1,1,1)
+    Koopa = t.Turtle()
+    Koopa.shape(f"C:/Users/knw287/Downloads/koop (1).gif")
+    Koopa.shapesize(1,1,1)
+    Verne = t.Turtle()
+    Verne.shape(f"C:/Users/knw287/Downloads/turt (1).gif")
+    Verne.shapesize(1,1,1)
+    Donatello = t.Turtle()
+    Donatello.shape(f"C:/Users/knw287/Downloads/ninjaturt (1).gif")
+    Donatello.shapesize(1,1,1)
+    Crush = t.Turtle()
+    Crush.shape(f"C:/Users/knw287/Downloads/chillturtle (1).gif")
+    Crush.shapesize(1,1,1)
     Line = t.Turtle()
     Divider = t.Turtle()
 
     while True:
         t.Screen().reset()
-        speedsters = [Bob,Ben,Sally,Burt,Bertha]
-        people = [Bob,Ben,Sally,Burt,Bertha,Line,Divider]
+        speedsters = [Turtle,Koopa,Verne,Donatello,Crush]
+        people = [Turtle,Koopa,Verne,Donatello,Crush,Line,Divider]
         colour = ["black","purple","yellow","blue","green","red","grey"]
         y = 0
         for x in people:
@@ -97,6 +97,10 @@ def full_race():
                 
         setup(people)
         race(speedsters)
+        for racers in speedsters:
+            if racers.xcor() >= 200:
+                racers.goto(0,-100)
+                racers.write(f"{racers} has won the race!")
         
         Answer = easy.choicebox("Do you want to watch a rematch?", "Rerace?",("Yes","No"))
         if Answer == "No":
