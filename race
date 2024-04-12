@@ -1,6 +1,4 @@
 import turtle as t, random as r, easygui as easy
-t.speed(2)
-t.hideturtle()
 wins = [0,0,0,0,0]
 win = t.Screen()
 
@@ -63,6 +61,7 @@ def race(speedsters):
 #setsup race, races then restarts if agreed to
 def full_race():
     exist = []
+    win.bgpic(f"C:/Users/knw287/Downloads/crowd (1) (1).gif")
     win.register_shape(f"C:/Users/knw287/Downloads/download (1).gif")
     win.register_shape(f"C:/Users/knw287/Downloads/koop (1).gif")
     win.register_shape(f"C:/Users/knw287/Downloads/turt (1).gif")
