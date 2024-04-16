@@ -97,10 +97,23 @@ def full_race():
                 
         setup(people)
         race(speedsters)
-        for racers in speedsters:
-            if racers.xcor() >= 200:
-                racers.goto(0,-100)
-                racers.write(f"{racers} has won the race!")
+        
+        #win message
+        if Turtle.xcor() >= 200:
+            Turtle.goto(0,-100)
+            Turtle.write("Turtle has won the race!")
+        if Koopa.xcor() >= 200:
+            Koopa.goto(0,-100)
+            Koopa.write("Koopa Troopa has won the race!")
+        if Verne.xcor() >= 200:
+            Verne.goto(0,-100)
+            Verne.write("Verne has won the race!")
+        if Donatello.xcor() >= 200:
+            Donatello.goto(0,-100)
+            Donatello.write("Donatello has won the race!")
+        if Crush.xcor() >= 200:
+            Crush.goto(0,-100)
+            Crush.write("Crush has won the race!")
         
         Answer = easy.choicebox("Do you want to watch a rematch?", "Rerace?",("Yes","No"))
         if Answer == "No":
